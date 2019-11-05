@@ -1,0 +1,39 @@
+@import "../../styles/theme/default";
+
+$prefixCls: #{$prefix}-layout !default;
+
+.#{$prefixCls} {
+  display: flex;
+  flex: auto;
+  flex-direction: column;
+  min-height: 0;
+  background: $layout-background;
+
+  &,*{
+    box-sizing: border-box;
+  }
+}
+
+.#{$prefixCls}-sidebar {
+}
+
+.#{$prefixCls}-header {
+  flex: 0 0 auto;
+  height: $layout-header-height;
+  line-height: $layout-header-height;
+  padding: $layout-header-padding;
+  background: $layout-header-background;
+}
+
+.#{$prefixCls}-content {
+  flex: auto;
+  margin: 0;
+}
+
+.#{$prefixCls}-footer {
+  flex: 0 0 auto;
+  padding: $layout-footer-padding;
+  background: $layout-footer-background;
+  color: $layout-footer-color;
+  font-size: $layout-footer-font-size;
+}
