@@ -9,7 +9,6 @@ npm run build
 # 进入生成的文件夹
 cd ./dist
 
-
 git init
 git add -A
 git commit -m 'build'
@@ -17,6 +16,6 @@ git commit -m 'build'
 # 发布到 https://github.com/imrige/component.git
 git push -f https://github.com/imrige/component.git master:gh-pages
 
-open https://imrige.github.io/blog/
+open https://imrige.github.io/component/
 
 cd -
