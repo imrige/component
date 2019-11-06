@@ -1,20 +1,16 @@
-import Layout from "./Layout";
-import LayoutHeader from "./LayoutHeader";
-import LayoutSidebar from "./LayoutSidebar";
-import LayoutContent from "./LayoutContent";
-import LayoutFooter from "./LayoutFooter";
+import Layout from "./Layout.js";
+import Sidebar from './Sidebar.js';
 
-Layout.Header = LayoutHeader;
-Layout.Sidebar = LayoutSidebar;
-Layout.Content = LayoutContent;
-Layout.Footer = LayoutFooter;
+Layout.Sidebar = Sidebar;
 
 import './style.scss';
 
-export {
-    Layout,
-    LayoutSidebar,
-    LayoutHeader,
-    LayoutContent,
-    LayoutFooter,
-}
+Layout.install = (Vue) => {
+    Vue.component(Layout.name, Layout);
+    Vue.component(Layout.Header.name, Layout.Header);
+    Vue.component(Layout.Content.name, Layout.Content);
+    Vue.component(Layout.Footer.name, Layout.Footer);
+    Vue.component(Layout.Sidebar.name, Layout.Sidebar);
+};
+
+export default Layout;

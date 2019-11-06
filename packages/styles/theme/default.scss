@@ -53,8 +53,8 @@ $gutter-xs: 08px !default;
 
 // ------ Link ------
 $link-color: $primary !default;
-$link-color-hover: lighten($primary, .7) !default;
-$link-color-active: darken($primary, .3) !default;
+$link-color-hover: lighten($primary, 10%) !default;
+$link-color-active: darken($primary, 10%) !default;
 $link-decoration: none !default;
 $link-decoration-hover: none !default;
 
@@ -98,6 +98,8 @@ $card-shadow: 0 2px 8px rgba(0, 0, 0, 0.09) !default;
 
 $card-background: #ffffff !default;
 $card-body-padding: $gutter-lg !default;
+
+$card-grid-padding: $gutter-lg !default;
 
 $card-head-color: $heading-color !default;
 $card-head-background: transparent !default;

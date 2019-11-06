@@ -1,8 +1,15 @@
+const DEV_PATH = "/";
+const PROD_PATH = "/component";
+
+function isProduct() {
+    return process.env.NODE_ENV === 'production';
+}
+
 module.exports = {
-    publicPath: '/component',
+    publicPath: isProduct() ? PROD_PATH : DEV_PATH,
     pages: {
         index: {
-            entry: 'examples/main.js',
+            entry: 'example/main.js',
             template: 'public/index.html',
             filename: 'index.html'
         }
@@ -18,7 +25,7 @@ module.exports = {
             .tap(options => {
                 // 修改它的选项...
                 return options
-            })
+            });
     },
     devServer: {
         port: 3000

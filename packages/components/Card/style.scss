@@ -1,4 +1,5 @@
 @import "../../styles/theme/default";
+@import "../../styles/mixins/clearfix";
 
 $prefixCls: #{$prefix}-card !default;
 
@@ -31,13 +32,9 @@ $prefixCls: #{$prefix}-card !default;
   border-radius: $card-radius $card-radius 0 0;
   background: $card-head-background;
   zoom: 1;
-  font-weight: 500;
   font-size: 16px;
 
-  &::before, &::after {
-    display: table;
-    content: '';
-  }
+  @include clearfix();
 
   &-wrapper {
     display: flex;
@@ -48,12 +45,13 @@ $prefixCls: #{$prefix}-card !default;
       flex: 1;
       color: $card-head-color;
       padding: $card-head-padding 0;
+      font-weight: 500;
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
     }
 
-    .#{$prefixCls}-extra {
+    .#{$prefixCls}-head-extra {
       float: right;
       margin-left: auto;
       padding: $card-head-padding 0;
@@ -63,9 +61,22 @@ $prefixCls: #{$prefix}-card !default;
   }
 }
 
+.#{$prefixCls}-cover {
+  img {
+    border-radius: $card-radius $card-radius 0 0;
+  }
+
+  * {
+    display: block;
+    width: 100%;
+  }
+}
+
 .#{$prefixCls}-body {
   padding: $card-body-padding;
-  zoom: 1
+  zoom: 1;
+
+  @include clearfix();
 }
 
 .#{$prefixCls}-loading {
@@ -97,6 +108,31 @@ $prefixCls: #{$prefix}-card !default;
     .#{$prefixCls}-meta-description {
       color: $content-color;
     }
+  }
+}
+
+.#{$prefixCls}-contain-grid {
+  &:not(.#{$prefixCls}-loading) {
+    .#{$prefixCls}-body {
+      padding: 0;
+      margin: -1px 0 0 -1px;
+    }
+  }
+}
+
+.#{$prefixCls}-grid {
+  float: left;
+  width: 33.33%;
+  padding: $card-grid-padding;
+  border: 0;
+  border-radius: 0;
+  transition: all 0.3s;
+  box-shadow: 1px 0 0 0 #e8e8e8, 0 1px 0 0 #e8e8e8, 1px 1px 0 0 #e8e8e8, 1px 0 0 0 #e8e8e8 inset, 0 1px 0 0 #e8e8e8 inset;
+
+  &:hover {
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   }
 }
 

@@ -21,3 +21,18 @@ small {
   font-size: 12px;
   color: $text-color-secondary;
 }
+
+a {
+  color: $link-color;
+  cursor: pointer;
+  text-decoration: $link-decoration;
+
+  &:hover {
+    color: $link-color-hover;
+    text-decoration: $link-decoration-hover;
+  }
+
+  &:active {
+    color: $link-color-active;
+  }
+}

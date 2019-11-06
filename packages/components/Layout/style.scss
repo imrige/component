@@ -9,13 +9,22 @@ $prefixCls: #{$prefix}-layout !default;
   min-height: 0;
   background: $layout-background;
 
-  &,*{
+  &, * {
     box-sizing: border-box;
   }
 }
 
 .#{$prefixCls}-sidebar {
+  position: relative;
+  min-width: 0;
+  background: $layout-sidebar-background;
+  transition: all 0.2s;
 }
+
+.#{$prefixCls}-has-sidebar {
+  flex-direction: row;
+}
+
 
 .#{$prefixCls}-header {
   flex: 0 0 auto;

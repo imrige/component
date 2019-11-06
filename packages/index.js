@@ -1,19 +1,19 @@
-import * as Card from './components/Card';
-import * as Layout from "./components/Layout";
-import * as Skeleton from "./components/Skeleton";
+import Card from './components/Card';
+import Layout from "./components/Layout";
+import Menu from './components/Menu';
 
 import './styles/index.scss';
 
-let components = {
-    ...Card,
-    ...Layout,
-    ...Skeleton,
-};
+let components = [
+    Card,
+    Layout,
+    Menu
+];
 
 export default {
     install: (Vue) => {
-        Object.keys(components).forEach(key => {
-            Vue.component(key, components[key]);
-        })
+        components.map(component => {
+            Vue.use(component);
+        });
     }
 }

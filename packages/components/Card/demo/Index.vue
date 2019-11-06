@@ -1,9 +1,11 @@
 <template>
-
+    <div>
+        Card
+    </div>
 </template>
 
 <script>
     export default {
-        name: "CardGrid"
+        name: "index",
     }
 </script>

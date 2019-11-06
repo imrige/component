@@ -1,10 +1,15 @@
-import Card from "./Card";
-import CardGrid from "./CardGrid";
-import CardMeta from "./CardMeta";
+import Card from "./Card.js";
+import Grid from "./CardGrid.js";
+import Meta from "./CardMeta.js";
 import './style.scss';
 
-export {
-    Card,
-    CardGrid,
-    CardMeta
-}
+Card.Grid = Grid;
+Card.Meta = Meta;
+
+Card.install = Vue => {
+    Vue.component(Card.name, Card);
+    Vue.component(Grid.name, Grid);
+    Vue.component(Meta.name, Meta);
+};
+
+export default Card;
